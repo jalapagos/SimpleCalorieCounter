@@ -3,7 +3,6 @@
 </head>
 <body>
 	<div id="top">
-		<!--<h1 style="margin:0 auto;font-family:Impact;color:#9A3334;border:0px;padding:0px;">EasyCounter</h1>-->
 		<h1 style="float:left;margin:0;font-family:Impact;color:#9A3334;border:0px;padding:0px;">EasyCounter</h1>
 		<label style="float:left;margin-left:10px;">
 			<meteor-include src="loginButtons" style="color:black;font-size:14pt;"></meteor-include>
@@ -43,7 +42,7 @@
       					
       					<div class="modal-footer"> <!--7-->
 						    <button ng-click="clear()" style="box-shadow:none;outline:none;" class="btn btn-default" data-dismiss="modal">Close</button>
-						    <button ng-click="submit()" class="btn btn-primary" id="submit">Submit</button>
+						    <button ng-click="submit()" class="btn btn-primary" id="submit" data-dismiss="modal">Submit</button>
 						    <button ng-click="addItem()" class="btn btn-primary">+Item</button>
 				        </div> <!--/7-->
 
@@ -56,9 +55,36 @@
 		</div> <!--/left-->
 
 		<div id="right" ng-controller="resultCtrl"> <!--right-->
+			
 			<label id="date">
 				Today's Date : {{todayDate}}
 			</label>
+			<br><br><br>
+			<label ng-show="!countMeals()" id="noMeals">
+				No Meals for today!
+			</label>
+
+
+			<table class="table table-hover" ng-show="countMeals()">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Description</th>
+						<th>Calories</th>
+						<th>Date</th>
+					</tr>
+				</thead>
+
+				<tbody ng-repeat="meal in allMeals">
+					<tr>
+						<td>{{$index+1}}</td>
+						<td>{{meal.description}}</td>
+						<td>{{meal.total}}</td>
+						<td>{{meal.date}}</td>
+					</tr>
+				</tbody>
+			</table>
+
 		</div> <!--/right-->
 
 	</div><!--/main-content-->

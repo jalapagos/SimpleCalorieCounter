@@ -47,13 +47,14 @@ if (Meteor.isClient) {
 
       if(currentUserId!=null) {
         if($scope.checkValidity()==false) {
-          alert("Need to fill out valid calories and/or items!");
+          $scope.clear();
+          alert("Need to fill out valid information!");
         }
         else {
           $scope.meal.createdBy = currentUserId;
           var total = $scope.getTotal();
           $scope.meal.total = total;
-          var date = $scope.getDate();
+          var date = getDate();
           $scope.meal.date = date;
           Meteor.call("submit", angular.copy($scope.meal));
           $scope.clear();
@@ -83,6 +84,10 @@ if (Meteor.isClient) {
     }
 
     $scope.checkValidity = function() {
+      if ($scope.meal.description==null) {
+        return false;
+      }
+
       for(var temp = 0; temp < $scope.meal.items.length;temp++) {
         if (($scope.meal.items[temp].name==null && $scope.meal.items[temp].cal!=null) 
           || ($scope.meal.items[temp].name!=null && $scope.meal.items[temp].cal==null)
@@ -98,8 +103,18 @@ if (Meteor.isClient) {
     $scope.allMeals = $meteor.collection(Meals);
 
     $scope.todayDate = getDate();
+
+    $scope.show = true;
     
-    
+    $scope.countMeals = function() {
+      if (Meals.find().count() > 0) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+
     $scope.clearData = function() {
       var temp = Meteor.userId();
       if (temp!=null) {
@@ -129,8 +144,8 @@ if (Meteor.isServer) {
 
   Meteor.publish('meals-info', function() {
     var currentUserId = this.userId;
-    var currentDate = Meteor.call("getDate");
-    return Meals.find({createdBy: currentUserId, date: currentDate});
+    //var currentDate = Meteor.call("getDate");
+    return Meals.find({createdBy: currentUserId});
   });
 
 }

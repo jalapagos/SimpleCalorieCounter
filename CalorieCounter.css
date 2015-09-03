@@ -72,126 +72,23 @@ button:focus{
 	text-align:center;
 	font-family:garamond;
 	font-size:25pt;
-	/*color:#3399FF;*/
 	color:white;
 	height:50px;
 	width:550px;
-	/*border: 1px solid black;*/
 	border-radius: 5px;
 	background-color: #9A3334;
 
 }
-/*#title {
+
+.table {
+	border:3px solid black;
+}
+
+#noMeals {
 	text-align: center;
-	font-size: 45px;
-	padding: 0px;
-	border: 0px;
-}
-
-#left, #right {
-	height: 100%;
-	width: 580px;
+	font-size: 25pt;
+	height: 50px;
+	width: 550px;
 	border: 1px solid black;
-	font-size: 25px;
-	float: left;
+	border-radius: 5px;
 }
-
-#left {
-	margin-right: 15px;
-}
-
-#right {
-    margin-left: 15px;
-    margin-right: 10px;
-}
-
-.calories {
-	width: 200px;
-	height: 25px;
-	font-size: 20px;
-	font-family: "garamond";
-
-}
-
-.item {
-	font-family: "garamond";
-	width: 200px;
-	height: 25px;
-	font-size: 20px;
-	margin-left: 14px;
-}
-
-#signIn {
-	text-align: center;
-	height:53px;
-	width: 163px;
-	border: 1px solid black;
-	font-size: 20px;
-	font-family: "garamond";
-	text-decoration: none;
-	background-color: #E94F4F;
-	margin: 0 auto;
-	border-radius: 10px;
-	font-weight: bold;
-}
-
-#submitButton {
-	width: 150px;
-	height: 50px;
-	display: block;
-	margin: 0 auto;
-	background-color: #;
-	border-color:transparent;
-	font-size: 25px;
-	border-radius: 10px;
-	font-family: "garamond";
-	font-weight: bold;
-	box-shadow: none;
-	display: inline;
-}
-
-#itemButton {
-	width: 150px;
-	height: 50px;
-	background-color: #87CEFA;
-	border-color:transparent;
-	font-size: 25px;
-	border-radius: 10px;
-	font-family: "garamond";
-	font-weight: bold;
-	box-shadow: none;
-	display: inline;
-	color: white;
-}
-
-#clearButton {
-	width: 150px;
-	height: 50px;
-	display: block;
-	margin: 0 auto;
-	background-color: #ffb300;
-	border-color:transparent;
-	font-size: 25px;
-	border-radius: 10px;
-	font-family: "garamond";
-	font-weight: bold;
-	box-shadow: none;
-}
-
-button:active {
-	outline: none;
-	border: none;
-}
-
-button:focus {
-	outline: 0;
-}
-
-.form-control {
-	font-family: "garamond";
-	width: 200px;
-	height: 35px;
-	font-size: 20px;
-	margin-left: 14px;
-	display: inline;
-}*/
