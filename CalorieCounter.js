@@ -1,6 +1,6 @@
 Meals = new Mongo.Collection("meals-info");
 
-var getDate = function() {
+var currentDate = function() {
   var today = new Date();
   var mm = today.getMonth()+1;
   var dd = today.getDate();
@@ -50,11 +50,15 @@ if (Meteor.isClient) {
           $scope.clear();
           alert("Need to fill out valid information!");
         }
+        else if ($scope.mealName($scope.meal.description)==true) {
+          $scope.clear();
+          alert("Same meal name! Invalid!");
+        }
         else {
           $scope.meal.createdBy = currentUserId;
           var total = $scope.getTotal();
           $scope.meal.total = total;
-          var date = getDate();
+          var date = currentDate();
           $scope.meal.date = date;
           Meteor.call("submit", angular.copy($scope.meal));
           $scope.clear();
@@ -63,6 +67,17 @@ if (Meteor.isClient) {
       else {
         alert("You must sign in first!");
       }
+    }
+
+    $scope.mealName = function(name) {
+      var temp = Meals.find().fetch();
+
+      for (var x = 0; x < temp.length;x++) {
+        if (temp[x].description==name) {
+          return true;
+        }
+      }
+      return false;
     }
 
     $scope.getTotal = function() {
@@ -87,7 +102,10 @@ if (Meteor.isClient) {
       if ($scope.meal.description==null) {
         return false;
       }
-
+      if ($scope.meal.items.length==0) {
+        return false;
+      }
+      
       for(var temp = 0; temp < $scope.meal.items.length;temp++) {
         if (($scope.meal.items[temp].name==null && $scope.meal.items[temp].cal!=null) 
           || ($scope.meal.items[temp].name!=null && $scope.meal.items[temp].cal==null)
@@ -102,7 +120,7 @@ if (Meteor.isClient) {
  myApp.controller('resultCtrl',['$scope','$meteor',function($scope,$meteor) {
     $scope.allMeals = $meteor.collection(Meals);
 
-    $scope.todayDate = getDate();
+    $scope.todayDate = currentDate();
 
     $scope.show = true;
     
@@ -144,8 +162,8 @@ if (Meteor.isServer) {
 
   Meteor.publish('meals-info', function() {
     var currentUserId = this.userId;
-    //var currentDate = Meteor.call("getDate");
-    return Meals.find({createdBy: currentUserId});
+    var temp = currentDate();
+    return Meals.find({createdBy: currentUserId, date: temp});
   });
 
 }

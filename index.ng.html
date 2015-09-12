@@ -78,7 +78,11 @@
 				<tbody ng-repeat="meal in allMeals">
 					<tr>
 						<td>{{$index+1}}</td>
-						<td>{{meal.description}}</td>
+						<td><b>{{meal.description}} :</b>
+							<ol ng-repeat = "item in meal.items">
+								{{item.name}} : {{item.cal}}
+			      			</ol>
+						</td>
 						<td>{{meal.total}}</td>
 						<td>{{meal.date}}</td>
 					</tr>
