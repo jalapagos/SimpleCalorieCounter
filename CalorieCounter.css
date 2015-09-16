@@ -82,7 +82,7 @@ button:focus{
 	border:3px solid black;
 }
 
-#noMeals {
+#noMeals,#caloriesToday {
 	text-align: center;
 	font-size: 25pt;
 	height: 50px;

@@ -6,8 +6,6 @@ var currentDate = function() {
   var dd = today.getDate();
   var yyyy = today.getFullYear();
 
-  var months
-
   if (dd<10) {
     dd = '0'+dd;
   }
@@ -18,6 +16,15 @@ var currentDate = function() {
 
   today = mm+'/'+dd+'/'+yyyy;
   return today;
+}
+
+var totalCalories = function() {
+  var data = Meals.find().fetch();
+  var total = 0;
+  for (var temp = 0; temp < data.length; temp++) {
+    total = total + data[temp].total;
+  }
+  return total;
 }
 
 if (Meteor.isClient) {
@@ -122,10 +129,14 @@ if (Meteor.isClient) {
 
     $scope.todayDate = currentDate();
 
-    $scope.show = true;
+    $scope.caloriesToday;
+   // $scope.show = true;
+
+
     
     $scope.countMeals = function() {
       if (Meals.find().count() > 0) {
+        $scope.caloriesToday = totalCalories();
         return true;
       }
       else {
