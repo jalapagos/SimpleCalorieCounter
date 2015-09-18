@@ -5,6 +5,6 @@ user. Worked with NoSQL database, MongoDB, to store user data. Using MeteorJS fr
 stack for the application. Utilized AngularJS as the client side framework along with HTML/Twitter
 Bootstrap for CSS. 
 
-Simple application to track down calories and meals. Full function application is functional and 
+Simple application to track down calories and meals. Full application is functional and 
 has been deployed on MeteorJS cloud (http://caloriecounter.meteor.com/), however I would like
 to add more functions to make it even more useful. 
