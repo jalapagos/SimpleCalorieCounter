@@ -130,9 +130,6 @@ if (Meteor.isClient) {
     $scope.todayDate = currentDate();
 
     $scope.caloriesToday;
-   // $scope.show = true;
-
-
     
     $scope.countMeals = function() {
       if (Meals.find().count() > 0) {
