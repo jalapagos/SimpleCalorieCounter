@@ -6,5 +6,5 @@ stack for the application. Utilized AngularJS as the client side framework along
 Bootstrap for CSS. 
 
 Simple application to track down calories and meals. Full application is functional and 
-has been deployed on MeteorJS cloud (http://caloriecounter.meteor.com/), however I would like
+has been deployed on MeteorJS cloud (http://calcounter.meteor.com/), however I would like
 to add more functions to make it even more useful and make mobile friendly. 
