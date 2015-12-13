@@ -1,34 +1,5 @@
-Meals = new Mongo.Collection("meals-info");
+var myApp = angular.module('CalorieCounter',['angular-meteor']);
 
-var currentDate = function() {
-  var today = new Date();
-  var mm = today.getMonth()+1;
-  var dd = today.getDate();
-  var yyyy = today.getFullYear();
-
-  if (dd<10) {
-    dd = '0'+dd;
-  }
-
-  if (mm<10) {
-    mm = '0'+mm;
-  }
-
-  today = mm+'/'+dd+'/'+yyyy;
-  return today;
-}
-
-var totalCalories = function() {
-  var data = Meals.find().fetch();
-  var total = 0;
-  for (var temp = 0; temp < data.length; temp++) {
-    total = total + data[temp].total;
-  }
-  return total;
-}
-
-/*if (Meteor.isClient) {
-  var myApp = angular.module('CalorieCounter',['angular-meteor']);
 
   Meteor.subscribe('meals-info');
 
@@ -152,26 +123,3 @@ var totalCalories = function() {
     }
 
   }]);
-}*/
-
-if (Meteor.isServer) {
-  
-  Meteor.methods({
-    
-    submit:function(meal) {
-      Meals.insert(meal);
-    },
-
-    clearData:function() {
-      Meals.remove({});
-    } 
-
-  });
-
-  Meteor.publish('meals-info', function() {
-    var currentUserId = this.userId;
-    var temp = currentDate();
-    return Meals.find({createdBy: currentUserId, date: temp});
-  });
-
-}
