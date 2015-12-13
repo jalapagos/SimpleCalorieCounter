@@ -3,14 +3,25 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<div class="container-fluid">
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<h1 style="margin:0;font-family:Impact;color:#9A3334;border:0px;padding:5px;">EasyCounter</h1>
+			</div>
+			      <ul class="nav navbar-nav navbar-right">
+        <li><meteor-include src="loginButtons" style="color:black;font-size:14pt;"></meteor-include>
+</li>
+      </ul>
+		</div>
+	</nav>
+
+	<!--
 	<div id="top">
 		<h1 style="float:left;margin:0;font-family:Impact;color:#9A3334;border:0px;padding:0px;">EasyCounter</h1>
 		<label style="float:left;margin-left:10px;">
 			<meteor-include src="loginButtons" style="color:black;font-size:14pt;"></meteor-include>
 		</label>
-	</div>
-</div>
+	</div>-->
 	<div id="main-content"> <!--main-content-->
 
 		<div id="left"> <!--left-->
