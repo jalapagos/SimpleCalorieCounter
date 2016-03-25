@@ -1,4 +1,5 @@
-<head>
+
+<!--<head>
 	<link rel="stylesheet" type="text/css" href="CalorieCounter.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -14,33 +15,25 @@
       </ul>
 		</div>
 	</nav>
+	<div id="main-content"> main-content
 
-	<!--
-	<div id="top">
-		<h1 style="float:left;margin:0;font-family:Impact;color:#9A3334;border:0px;padding:0px;">EasyCounter</h1>
-		<label style="float:left;margin-left:10px;">
-			<meteor-include src="loginButtons" style="color:black;font-size:14pt;"></meteor-include>
-		</label>
-	</div>-->
-	<div id="main-content"> <!--main-content-->
-
-		<div id="left"> <!--left-->
+		<div id="left"> left
 			<button id="meal-button" data-toggle="modal" data-target="#myModal" data-backdrop="static">Add Meal</button>
 			
-			<!-- Modal -->
-			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"> <!--1-->
-  				<div class="modal-dialog" role="document"> <!--2-->
-    				<div class="modal-content" ng-controller="formCtrl"> <!--3-->
-      					<div class="modal-header"> <!--4-->
+			Modal 
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"> <1
+  				<div class="modal-dialog" role="document"> 2
+    				<div class="modal-content" ng-controller="formCtrl"> <
+      					<div class="modal-header"> <
         					<button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="clear()"><span aria-hidden="true">&times;</span></button>
         					<h2 class="modal-title" id="myModalLabel">Meal</h2>
-      					</div> <!--/4-->
+      					</div> <
       					
-      					<div class="modal-body"> <!--5-->
+      					<div class="modal-body"> 
       						<label>Description :
       							<input type="text" ng-model="meal.description">
       						</label>
-       						<div ng-repeat="item in meal.items"> <!--6-->
+       						<div ng-repeat="item in meal.items"> 
 								<label>Item {{$index+1}} :
 									<input type="text" class="item" ng-model="item.name"><br>
 								</label>
@@ -48,23 +41,22 @@
 									<input type="number" class="calories" ng-model="item.cal"><br>
 								</label>
 								<br>
-							</div> <!--/6-->
+							</div> <
       					
-      					<div class="modal-footer"> <!--7-->
+      					<div class="modal-footer"> 
 						    <button ng-click="clear()" style="box-shadow:none;outline:none;" class="btn btn-default" data-dismiss="modal">Close</button>
 						    <button ng-click="submit()" class="btn btn-primary" id="submit" data-dismiss="modal">Submit</button>
 						    <button ng-click="addItem()" class="btn btn-primary">+Item</button>
-				        </div> <!--/7-->
+				        </div> 
 
-				    </div> <!--/5-->
-    			 </div> <!--/3-->
-  		      </div> <!--/2-->
-			</div><!--/1-->
-			<!--/Modal-->
+				    </div> 
+    			 </div> 
+  		      </div> 
+			</div><
+			
 		
-		</div> <!--/left-->
-
-		<div id="right" ng-controller="resultCtrl"> <!--right-->
+		</div> /left
+		<div id="right" ng-controller="resultCtrl"> right
 			
 			<label id="date">
 				Today's Date : {{todayDate}}
@@ -102,7 +94,7 @@
 			<label ng-show="countMeals()" id="caloriesToday">
 				Total Calories : {{caloriesToday}}
 			</label>
-		</div> <!--/right-->
+		</div> /right
 
-	</div><!--/main-content-->
-</body>
+	</div></main-content
+</body>-->

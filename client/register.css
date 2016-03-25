@@ -1,0 +1,15 @@
+.container {
+	width: 350px;
+}
+
+.input-block-level {
+	width: 290px;
+	border-radius: 10px;
+	border: 1px solid black;
+	padding: 5px;
+	outline: none;
+}
+
+.btn {
+
+}

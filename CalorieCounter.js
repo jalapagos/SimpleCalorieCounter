@@ -1,4 +1,4 @@
-Meals = new Mongo.Collection("meals-info");
+/*Meals = new Mongo.Collection("meals-info");
 
 var currentDate = function() {
   var today = new Date();
@@ -27,7 +27,7 @@ var totalCalories = function() {
   return total;
 }
 
-/*if (Meteor.isClient) {
+if (Meteor.isClient) {
   var myApp = angular.module('CalorieCounter',['angular-meteor']);
 
   Meteor.subscribe('meals-info');
@@ -152,7 +152,7 @@ var totalCalories = function() {
     }
 
   }]);
-}*/
+}
 
 if (Meteor.isServer) {
   
@@ -174,4 +174,4 @@ if (Meteor.isServer) {
     return Meals.find({createdBy: currentUserId, date: temp});
   });
 
-}
+}*/
