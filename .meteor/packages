@@ -9,7 +9,6 @@ twbs:bootstrap
 accounts-password
 accounts-facebook
 accounts-ui
-standard-minifiers
 meteor-base
 mobile-experience
 mongo
@@ -22,3 +21,5 @@ random
 ejson
 check
 angular
+standard-minifier-css
+standard-minifier-js
